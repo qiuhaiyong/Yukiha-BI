@@ -6,6 +6,8 @@ import ConfigMenu from './ConfigMenu/ConfigMenu.vue'
 import CodeEdit from './CodeEdit/CodeEdit.vue'
 import TitleConfig from './ConfigPanel/common/TitleConfig.vue'
 import LegendConfig from './ConfigPanel/common/LegendConfig.vue'
+import ColorConfig from './ConfigPanel/common/ColorConfig.vue'
+import ToolTipConfig from './ConfigPanel/common/ToolTipConfig.vue'
 import PiePanel from './ConfigPanel/PiePanel/PiePanel.vue'
 // 全局组件对象
 const allGlobalComponent: Record<string, Component> = {
@@ -16,6 +18,8 @@ const allGlobalComponent: Record<string, Component> = {
   CodeEdit,
   TitleConfig,
   LegendConfig,
+  ColorConfig,
+  ToolTipConfig,
   PiePanel
 }
 // 全局组件注册插件

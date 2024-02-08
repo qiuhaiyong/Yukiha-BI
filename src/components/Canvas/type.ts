@@ -2,6 +2,7 @@ import type { ECBasicOption } from 'echarts/types/dist/shared'
 import type { ComposeOption } from 'echarts/core'
 import type {
   // 组件类型的定义后缀都为 ComponentOption
+
   TitleComponentOption,
   TooltipComponentOption,
   GridComponentOption,

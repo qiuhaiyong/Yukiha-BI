@@ -72,5 +72,37 @@ export default {
       label: '垂直',
       value: 'vertical'
     }
+  ],
+  triggerOptions: [
+    {
+      label: '数据项图形触发',
+      value: 'item'
+    },
+    {
+      label: '坐标轴触发',
+      value: 'axis'
+    },
+    {
+      label: '什么都不触发',
+      value: 'none'
+    }
+  ],
+  triggerOnOptions: [
+    {
+      label: '移动触发',
+      value: 'mousemove'
+    },
+    {
+      label: '点击触发',
+      value: 'click'
+    },
+    {
+      label: '移动和点击都触发',
+      value: 'mousemove|click'
+    },
+    {
+      label: '不触发',
+      value: 'none'
+    }
   ]
 }

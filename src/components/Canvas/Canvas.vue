@@ -70,7 +70,6 @@ const onResize = (handle: string[], x: number, y: number, w: number, h: number, 
 }
 
 const onActivated = (activeChart: ChartOption) => {
-  console.log()
   canvasStore.setActiveChart(activeChart)
 }
 

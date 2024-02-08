@@ -1,22 +1,34 @@
 <template>
   <div class="piepanel-container">
     <el-collapse v-model="activeNames" @change="handleChange">
-      <el-collapse-item title="标题配置" name="1">
+      <el-collapse-item name="1">
+        <template #title>
+          <div class="config-title">标题配置</div>
+        </template>
         <TitleConfig></TitleConfig>
       </el-collapse-item>
-      <el-collapse-item title="图例" name="2">
+      <el-collapse-item name="2">
+        <template #title>
+          <div class="config-title">图例</div>
+        </template>
         <LegendConfig></LegendConfig>
       </el-collapse-item>
-      <el-collapse-item title="自定义颜色" name="3">
-        <div>Simplify the process: keep operating process simple and intuitive;</div>
+      <el-collapse-item name="3">
+        <template #title>
+          <div class="config-title">自定义颜色</div>
+        </template>
+        <ColorConfig></ColorConfig>
       </el-collapse-item>
-      <el-collapse-item title="提示框" name="4">
-        <div>
-          Decision making: giving advices about operations is acceptable, but do not make decisions
-          for the users;
-        </div>
+      <el-collapse-item name="4">
+        <template #title>
+          <div class="config-title">提示框</div>
+        </template>
+        <ToolTipConfig></ToolTipConfig>
       </el-collapse-item>
-      <el-collapse-item title="数据系列" name="5">
+      <el-collapse-item name="5">
+        <template #title>
+          <div class="config-title">数据系列</div>
+        </template>
         <div>
           Decision making: giving advices about operations is acceptable, but do not make decisions
           for the users;
@@ -41,6 +53,11 @@ const handleChange = () => {}
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
+  }
+  .config-title {
+    font-size: var(--yu-font-size-medium);
+    color: var(--yu-text-color-regular);
+    padding-left: 15px;
   }
 }
 </style>

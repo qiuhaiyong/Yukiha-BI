@@ -9,6 +9,17 @@ const chartOptionList: ChartOption[] = [
     w: 300,
     h: 300,
     option: {
+      color: [
+        '#5470c6',
+        '#91cc75',
+        '#fac858',
+        '#ee6666',
+        '#73c0de',
+        '#3ba272',
+        '#fc8452',
+        '#9a60b4',
+        '#ea7ccc'
+      ],
       title: {
         show: false,
         text: '饼图',
@@ -22,13 +33,18 @@ const chartOptionList: ChartOption[] = [
         }
       },
       tooltip: {
-        trigger: 'item'
+        show: false,
+        trigger: 'item',
+        triggerOn: 'mousemove|click'
       },
       legend: {
         show: false,
         left: 'center',
         top: 'top',
         orient: 'horizontal',
+        itemGap: 10,
+        itemWidth: 25,
+        itemHeight: 14,
         textStyle: {
           fontFamily: 'sans-serif',
           fontSize: 12,
@@ -68,6 +84,17 @@ const chartOptionList: ChartOption[] = [
     w: 300,
     h: 300,
     option: {
+      color: [
+        '#5470c6',
+        '#91cc75',
+        '#fac858',
+        '#ee6666',
+        '#73c0de',
+        '#3ba272',
+        '#fc8452',
+        '#9a60b4',
+        '#ea7ccc'
+      ],
       title: {
         show: false,
         text: '折线图',
@@ -80,11 +107,19 @@ const chartOptionList: ChartOption[] = [
           fontWeight: 'bolder'
         }
       },
+      tooltip: {
+        show: false,
+        trigger: 'axis',
+        triggerOn: 'mousemove|click'
+      },
       legend: {
         show: false,
         left: 'center',
         top: 'top',
         orient: 'horizontal',
+        itemGap: 10,
+        itemWidth: 25,
+        itemHeight: 14,
         textStyle: {
           fontFamily: 'sans-serif',
           fontSize: 12,
@@ -116,6 +151,17 @@ const chartOptionList: ChartOption[] = [
     w: 300,
     h: 300,
     option: {
+      color: [
+        '#5470c6',
+        '#91cc75',
+        '#fac858',
+        '#ee6666',
+        '#73c0de',
+        '#3ba272',
+        '#fc8452',
+        '#9a60b4',
+        '#ea7ccc'
+      ],
       title: {
         show: false,
         text: '柱状图',
@@ -128,11 +174,19 @@ const chartOptionList: ChartOption[] = [
           fontWeight: 'bolder'
         }
       },
+      tooltip: {
+        show: false,
+        trigger: 'axis',
+        triggerOn: 'mousemove|click'
+      },
       legend: {
         show: false,
         left: 'center',
         top: 'top',
         orient: 'horizontal',
+        itemGap: 10,
+        itemWidth: 25,
+        itemHeight: 14,
         textStyle: {
           fontFamily: 'sans-serif',
           fontSize: 12,

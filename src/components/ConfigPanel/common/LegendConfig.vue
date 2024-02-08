@@ -76,6 +76,37 @@
         </el-select>
       </div>
     </div>
+    <div class="legend-config__item">
+      <div class="legend-config__item__title">布局朝向</div>
+      <div class="legend-config__item__config">
+        <el-select v-model="orient" placeholder="请选择">
+          <el-option
+            v-for="item in orientOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </div>
+    </div>
+    <div class="legend-config__item">
+      <div class="legend-config__item__title">图例间隔</div>
+      <div class="legend-config__item__config">
+        <el-input-number v-model="itemGap" :min="0" :max="100" style="width: 100%" />
+      </div>
+    </div>
+    <div class="legend-config__item">
+      <div class="legend-config__item__title">图例宽度</div>
+      <div class="legend-config__item__config">
+        <el-input-number v-model="itemWidth" :min="0" :max="100" style="width: 100%" />
+      </div>
+    </div>
+    <div class="legend-config__item">
+      <div class="legend-config__item__title">图例高度</div>
+      <div class="legend-config__item__config">
+        <el-input-number v-model="itemHeight" :min="0" :max="100" style="width: 100%" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -115,8 +146,18 @@ const verticalPosition = ref<string | undefined>('')
 const verticalOptions = commonSetting.verticalOptions
 
 // 布局朝向
-const orient = ref<string | undefined>('')
+declare type LayoutOrient = 'vertical' | 'horizontal'
+const orient = ref<LayoutOrient | undefined>('vertical')
 const orientOptions = commonSetting.orientOptions
+
+// 图例间隔
+const itemGap = ref<number | undefined>()
+
+// 图例宽度
+const itemWidth = ref<number | undefined>()
+
+// 图例高度
+const itemHeight = ref<number | undefined>()
 
 if (activeChartOption && !Array.isArray(activeChartOption.legend) && activeChartOption.legend) {
   showLegend.value = activeChartOption.legend.show
@@ -126,6 +167,10 @@ if (activeChartOption && !Array.isArray(activeChartOption.legend) && activeChart
   fontWeight.value = activeChartOption.legend.textStyle?.fontWeight
   horizontalPosition.value = activeChartOption.legend.left + ''
   verticalPosition.value = activeChartOption.legend.top + ''
+  orient.value = activeChartOption.legend.orient
+  itemGap.value = activeChartOption.legend.itemGap
+  itemWidth.value = activeChartOption.legend.itemWidth
+  itemHeight.value = activeChartOption.legend.itemHeight
 }
 
 watch(showLegend, (newValue: boolean | undefined) => {
@@ -199,6 +244,38 @@ watch(horizontalPosition, (newValue: string | undefined) => {
 watch(verticalPosition, (newValue: string | undefined) => {
   if (activeChartOption && !Array.isArray(activeChartOption.legend) && activeChartOption.legend) {
     activeChartOption.legend.top = newValue
+  } else {
+    console.log('配置图例出错！')
+  }
+})
+
+watch(orient, (newValue: LayoutOrient | undefined) => {
+  if (activeChartOption && !Array.isArray(activeChartOption.legend) && activeChartOption.legend) {
+    activeChartOption.legend.orient = newValue
+  } else {
+    console.log('配置图例出错！')
+  }
+})
+
+watch(itemGap, (newValue: number | undefined) => {
+  if (activeChartOption && !Array.isArray(activeChartOption.legend) && activeChartOption.legend) {
+    activeChartOption.legend.itemGap = newValue
+  } else {
+    console.log('配置图例出错！')
+  }
+})
+
+watch(itemWidth, (newValue: number | undefined) => {
+  if (activeChartOption && !Array.isArray(activeChartOption.legend) && activeChartOption.legend) {
+    activeChartOption.legend.itemWidth = newValue
+  } else {
+    console.log('配置图例出错！')
+  }
+})
+
+watch(itemHeight, (newValue: number | undefined) => {
+  if (activeChartOption && !Array.isArray(activeChartOption.legend) && activeChartOption.legend) {
+    activeChartOption.legend.itemHeight = newValue
   } else {
     console.log('配置图例出错！')
   }
